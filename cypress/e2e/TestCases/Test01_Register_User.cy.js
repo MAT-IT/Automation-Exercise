@@ -23,7 +23,7 @@ import HomePage from "../PageObjectRepo/HomePage"
 import signUpLoginPage from "../PageObjectRepo/SignUp_Login_page";
 const homepage = new HomePage();
 const signuploginpage =new signUpLoginPage();
-describe("Register User",()=>{
+describe("Test Case 1: Register user",()=>{
     it("Navigate to Url",()=>{
         cy.visit("http://automationexercise.com")
     })
@@ -32,7 +32,7 @@ describe("Register User",()=>{
         homepage.logo().should("be.visible")
     })
     it("Click on 'Signup / Login' button",()=>{
-        homepage.loginButton().click()
+        homepage.SignUploginButton().click()
     })
     it("Verify 'New User Signup!' is visible",()=>{
         signuploginpage.signUpFormHeader().should("contain","New User Signup!")
