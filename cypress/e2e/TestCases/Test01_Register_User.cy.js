@@ -39,7 +39,7 @@ describe("Test Case 1: Register user",()=>{
     })
     it("Enter name and email address",()=>{
         signuploginpage.SignUpNameBox().type("mat")
-        signuploginpage.SignUpEmailBox().type("abc@gmail.com")
+        signuploginpage.SignUpEmailBox().type("amazontestcypress@gmail.com")
     })
     it("Click 'Signup' button",()=>{
        signuploginpage.SignUpButton().click()
