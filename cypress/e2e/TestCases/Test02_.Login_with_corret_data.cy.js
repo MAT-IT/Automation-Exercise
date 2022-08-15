@@ -17,9 +17,10 @@ import signUpLoginPage from "../PageObjectRepo/SignUp_Login_page"
 
 const homepage = new HomePage()
 const loginSignup = new signUpLoginPage
-describe("Test Case 2: Login User with correct email and password",()=>{
+describe("Test Case 2: Login User with correct email and password",()=>{    
+  
     it("Navigate to url",()=>{
-        cy.visit("http://automationexercise.com")
+        cy.GoToUrl()
     })
     it("Verify that home page is visible successfully",()=>{
         homepage.logo().should("be.visible") 
@@ -32,8 +33,8 @@ describe("Test Case 2: Login User with correct email and password",()=>{
         loginSignup.LoginHeader().should("have.text","Login to your account")
     })
     it("Enter correct email address and password",()=>{
-        loginSignup.LoginEmailBox().type("abc@gmail.com")
-        loginSignup.LoginPasswordBox().type("123")
+        loginSignup.LoginEmailBox().type("amazontestcypress@gmail.com")
+        loginSignup.LoginPasswordBox().type("2301")
     })
     it("Click 'login' button",()=>{
         loginSignup.LoginButton().click()

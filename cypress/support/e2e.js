@@ -16,5 +16,10 @@
 // Import commands.js using ES2015 syntax:
 import './commands'
 
+//Forbidden (403) CSRF verification failed. Request aborted. hatasinin cozumu icin eklendi
+Cypress.Cookies.defaults({
+    preserve: "csrftoken"
+  });
+
 // Alternatively you can use CommonJS syntax:
 // require('./commands')

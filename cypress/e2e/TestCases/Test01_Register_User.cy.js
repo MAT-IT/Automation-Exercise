@@ -25,7 +25,7 @@ const homepage = new HomePage();
 const signuploginpage =new signUpLoginPage();
 describe("Test Case 1: Register user",()=>{
     it("Navigate to Url",()=>{
-        cy.visit("http://automationexercise.com")
+        cy.GoToUrl()
     })
     it("Verify that home page is visible successfully",()=>{
         cy.title().should("contain","Automation Exercise")
@@ -39,7 +39,7 @@ describe("Test Case 1: Register user",()=>{
     })
     it("Enter name and email address",()=>{
         signuploginpage.SignUpNameBox().type("mat")
-        signuploginpage.SignUpEmailBox().type("amazontestcypress@gmail.com")
+        signuploginpage.SignUpEmailBox().type("zhdtuna@gmail.com")
     })
     it("Click 'Signup' button",()=>{
        signuploginpage.SignUpButton().click()

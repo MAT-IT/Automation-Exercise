@@ -17,7 +17,7 @@ const homepage = new HomePage()
 const loginSignup = new signUpLoginPage
 describe("Test Case 3: Login User with incorrect email and password",()=>{
     it("Navigate to url",()=>{
-        cy.visit("http://automationexercise.com")
+        cy.GoToUrl()
     })
     it("Verify that home page is visible successfully",()=>{
         homepage.logo().should("be.visible") 
