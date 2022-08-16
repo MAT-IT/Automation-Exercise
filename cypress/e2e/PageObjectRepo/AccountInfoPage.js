@@ -67,3 +67,5 @@ class AccountInfo {
     }
 
 }
+
+export default AccountInfo
