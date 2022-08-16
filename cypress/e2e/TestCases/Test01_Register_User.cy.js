@@ -44,4 +44,7 @@ describe("Test Case 1: Register user",()=>{
     it("Click 'Signup' button",()=>{
        signuploginpage.SignUpButton().click()
     })
+    it("Verify that 'ENTER ACCOUNT INFORMATION' is visible",()=>{
+        
+     })
 })
