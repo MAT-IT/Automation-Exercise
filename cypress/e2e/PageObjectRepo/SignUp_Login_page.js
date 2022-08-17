@@ -24,5 +24,14 @@ class signUpLoginPage {
     LoginButton(){
         return cy.get('.login-form > form > .btn')
     }
+    loggedInAs(){
+        return cy.get(':nth-child(10) > a')
+    }
+    deleteAccount(){
+        return cy.get('.shop-menu > .nav > :nth-child(5) > a')
+    }
+    Logout(){
+        return cy.get('.shop-menu > .nav > :nth-child(4) > a')
+    }
 }
 export default signUpLoginPage

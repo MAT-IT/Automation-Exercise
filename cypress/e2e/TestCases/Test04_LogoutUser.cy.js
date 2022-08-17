@@ -1,3 +1,5 @@
+
+// 10. Verify that user is navigated to login page
 ///<reference types="cypress" />
 
 import HomePage from "../PageObjectRepo/HomePage"
@@ -5,7 +7,7 @@ import signUpLoginPage from "../PageObjectRepo/SignUp_Login_page"
 
 const homepage = new HomePage()
 const login = new signUpLoginPage
-describe("Test Case 2: Login User with correct email and password",()=>{    
+describe("Test Case 4: Logout User",()=>{    
   
     it("Navigate to url",()=>{
         cy.GoToUrl()
@@ -30,8 +32,8 @@ describe("Test Case 2: Login User with correct email and password",()=>{
     it("Verify that 'Logged in as username' is visible",()=>{
         login.loggedInAs().should("be.visible")
     })
-    it("Click 'Delete Account' button",()=>{
-        login.deleteAccount().click()
+    it("Click 'Logout' button",()=>{
+        login.Logout().click()
     })
     
 })

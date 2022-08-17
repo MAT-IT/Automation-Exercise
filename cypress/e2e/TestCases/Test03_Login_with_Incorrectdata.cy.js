@@ -1,13 +1,3 @@
-// Test Case 3: Login User with incorrect email and password
-// 1. Launch browser
-// 2. Navigate to url 'http://automationexercise.com'
-// 3. Verify that home page is visible successfully
-// 4. Click on 'Signup / Login' button
-// 5. Verify 'Login to your account' is visible
-// 6. Enter incorrect email address and password
-// 7. Click 'login' button
-// 8. Verify error 'Your email or password is incorrect!' is visible
-
 ///<reference types="cypress" />
 
 import HomePage from "../PageObjectRepo/HomePage"
@@ -29,11 +19,14 @@ describe("Test Case 3: Login User with incorrect email and password",()=>{
         loginSignup.LoginHeader().should("be.visible")
         loginSignup.LoginHeader().should("have.text","Login to your account")
     })
-    it("Enter correct email address and password",()=>{
+    it("Enter incorrect email address and password",()=>{
         loginSignup.LoginEmailBox().type("abc@gmail")
         loginSignup.LoginPasswordBox().type(" ")
     })
     it("Click 'login' button",()=>{
         loginSignup.LoginButton().click()
+    })
+    it("Verify error 'Your email or password is incorrect!' is visible",()=>{
+        cy.get('.login-form > form > p').should("have.text","Your email or password is incorrect!")
     })
 })

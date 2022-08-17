@@ -2,6 +2,9 @@ class AccountInfo {
     enteraccountinfo(){
         return cy.get(':nth-child(1) > b')
     }
+    titlecheck(){
+        return cy.get('.clearfix')
+    }
     titleMr(){
         return cy.get(':nth-child(3) > .top')
     }
@@ -47,7 +50,7 @@ class AccountInfo {
     adressline2(){
         return cy.get('#address2')
     }
-    countryselectbox(){
+    adresscountryselectbox(){
         return cy.get('#country')
     }
     adressstate(){
@@ -59,7 +62,7 @@ class AccountInfo {
     adresszipcode(){
         return cy.get('#zipcode')
     }
-    mobilenumber(){
+    adressmobilenumber(){
         return cy.get('#mobile_number')
     }
     createaccountbutton(){
