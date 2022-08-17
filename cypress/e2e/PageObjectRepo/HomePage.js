@@ -14,5 +14,14 @@ class HomePage {
     productbtn(){
         return cy.get('.shop-menu > .nav > :nth-child(2) > a')
     }
+    subscriptionTitle(){
+        return cy.get('.single-widget > h2')
+    }
+    subscripEmailBox(){
+        return cy.get('#susbscribe_email')
+    }
+    subscripButton(){
+        return cy.get('#subscribe')
+    }
 }
 export default HomePage;
