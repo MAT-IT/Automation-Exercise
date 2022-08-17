@@ -26,5 +26,12 @@ class productPage {
     wievproductBrand(){
         return cy.get('.product-information > :nth-child(8)')
     }
+    searchInputBox(){
+        return cy.get('#search_product')
+    }
+    searchButton(){
+        return cy.get('#submit_search')
+    }
+    
 }
 export default productPage
