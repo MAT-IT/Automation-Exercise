@@ -23,5 +23,8 @@ class HomePage {
     subscripButton(){
         return cy.get('#subscribe')
     }
+    cartBtn(){
+        return cy.get('.shop-menu > .nav > :nth-child(3) > a')
+    }
 }
 export default HomePage;
