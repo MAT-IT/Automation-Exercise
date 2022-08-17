@@ -1,11 +1,11 @@
 ///<reference types="cypress" />
 import productPage from "../PageObjectRepo/AllProductPage"
 import HomePage from "../PageObjectRepo/HomePage"
-import searchProduct from "../PageObjectRepo/SearchProduct"
+import searchProductPage from "../PageObjectRepo/SearchProductPage"
 
 const homepage = new HomePage()
 const productpage = new productPage()
-const searchproduct= new searchProduct()
+const searchproduct= new searchProductPage()
 
 describe("Test Case 9: Search Product",()=>{
     it("Navigate to url ",()=>{
@@ -23,9 +23,10 @@ describe("Test Case 9: Search Product",()=>{
     })
     it("Enter product name in search input and click search button",()=>{
         productpage.searchInputBox().type("JEANS")
+        productpage.searchButton().click()
     })
     it("Verify 'SEARCHED PRODUCTS' is visible",()=>{
-        productpage.searchButton().click()
+        
     })
     it("Verify all the products related to search are visible",()=>{
        searchproduct.productList().eq(0).should("contain.text","Jeans")

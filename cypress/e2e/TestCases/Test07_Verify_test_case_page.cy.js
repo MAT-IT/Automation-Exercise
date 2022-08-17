@@ -1,15 +1,13 @@
-// Test Case 7: Verify Test Cases Page
-// 1. Launch browser
-// 2. Navigate to url 'http://automationexercise.com'
-// 3. Verify that home page is visible successfully
-// 4. Click on 'Test Cases' button
-// 5. Verify user is navigated to test cases page successfully
-
 ///<reference types="cypress" />
 
 import HomePage from "../PageObjectRepo/HomePage"
+import TestCasePage from "../PageObjectRepo/TestCasePage"
 
-const homepage = new HomePage
+
+
+const homepage = new HomePage()
+const testcasepage =new TestCasePage()
+
 describe("Test Case 7: Verify Test Cases Page",()=>{
     it("Navigate to url",()=>{
         cy.GoToUrl()
@@ -22,11 +20,14 @@ describe("Test Case 7: Verify Test Cases Page",()=>{
         homepage.TestCaseBtn().click()
     })
     it("Verify user is navigated to test cases page successfully",()=>{
-        cy.get('span')
-        .should("have.text","Below is the list of test Cases for you to practice the Automation. Click on the scenario for detailed Test Steps:")
+        testcasepage.header().should("have.text","Test Cases")
     })
     it("test case lenght verify",()=>{
-        cy.get(".panel-heading h4 u").should("have.length",26)
+        testcasepage.testcasesCount().then(function(item){
+            const itemCount = Cypress.$(item).length;
+            testcasepage.testcasesCount().should("have.length",itemCount)
+            
+        })
     })
 
 })

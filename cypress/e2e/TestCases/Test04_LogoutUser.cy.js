@@ -1,5 +1,4 @@
 
-// 10. Verify that user is navigated to login page
 ///<reference types="cypress" />
 
 import HomePage from "../PageObjectRepo/HomePage"

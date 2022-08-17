@@ -1,7 +1,7 @@
-class searchProduct{
+class searchProductPage{
     productList(){
         return cy.get('.single-products')
     }
 }
 
-export default searchProduct
+export default searchProductPage
