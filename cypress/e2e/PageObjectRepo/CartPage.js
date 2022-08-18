@@ -11,5 +11,8 @@ class CartPage{
     footContainer(){
         return cy.get('.footer-widget > .container')
     }
+    cartProduct(){
+        return cy.get('.cart_product')
+    }
 }
 export default CartPage

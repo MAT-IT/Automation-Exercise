@@ -32,6 +32,14 @@ class productPage {
     searchButton(){
         return cy.get('#submit_search')
     }
-    
+    AddToCartBtn(){
+        return cy.get("a[class='btn btn-default add-to-cart']")
+    }
+    CountinueShoppingBtn(){
+        return cy.get('.modal-footer > .btn')
+    }
+    WievCartBtn(){
+        return cy.get('u')
+    }
 }
 export default productPage
