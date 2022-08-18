@@ -26,5 +26,12 @@ class HomePage {
     cartBtn(){
         return cy.get('.shop-menu > .nav > :nth-child(3) > a')
     }
+    allproduct(){
+        return cy.get(".features_items .col-sm-4")
+    }
+    viewProduct(){
+        return cy.get(".choose")
+    }
+   
 }
 export default HomePage;

@@ -14,6 +14,12 @@ class productPage {
     wievproductCategory(){
         return cy.get('.product-information > :nth-child(3)')
     }
+    viewProductQuantityLabel(){
+        return cy.get('label')
+    }
+    viewProductQuantity(){
+        return cy.get('#quantity')
+    }
     wievproductPrice(){
         return cy.get(':nth-child(5) > span')
     }
@@ -35,10 +41,13 @@ class productPage {
     AddToCartBtn(){
         return cy.get("a[class='btn btn-default add-to-cart']")
     }
+    addtocartbtn(){
+        return cy.get(':nth-child(5) > .btn')
+    }
     CountinueShoppingBtn(){
         return cy.get('.modal-footer > .btn')
     }
-    WievCartBtn(){
+    ViewCartBtn(){
         return cy.get('u')
     }
 }

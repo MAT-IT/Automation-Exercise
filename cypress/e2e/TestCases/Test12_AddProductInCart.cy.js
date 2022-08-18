@@ -41,9 +41,9 @@ describe("Test Case 12: Add Products in Cart",()=>{
     // })       
     
     it("Click 'View Cart' button",()=>{
-         productpage.WievCartBtn().click()
+         productpage.ViewCartBtn().click()
     })
     it("Verify both products are added to Cart",()=>{
-       cartpage.cartProduct.should("be.visible")
+       cartpage.cartProductImage().should("be.visible")
     })
 })
