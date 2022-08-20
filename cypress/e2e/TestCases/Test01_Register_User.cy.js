@@ -21,8 +21,8 @@ describe("Test Case 1: Register user", () => {
         signuploginpage.signUpFormHeader().should("contain", "New User Signup!")
     })
     it("Enter name and email address", () => {
-        signuploginpage.SignUpNameBox().type("cebeyden")
-        signuploginpage.SignUpEmailBox().type("cebeyden@gmail.com")
+        signuploginpage.SignUpNameBox().type("sssffebeyden")
+        signuploginpage.SignUpEmailBox().type("sssffebeyden@gmail.com")
     })
     it("Click 'Signup' button", () => {
         signuploginpage.SignUpButton().click()

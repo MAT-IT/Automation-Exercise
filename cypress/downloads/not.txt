@@ -1,0 +1,13 @@
+Mouse event larda kullanilan plugin:
+
+You can use the {cypress-real-events} plugin and this worked with your webpage.
+
+To install use the command:
+
+      npm i cypress-real-events
+Then inside your cypress/support/index.{js,ts}, write:
+
+       import "cypress-real-events/support";
+And in your code you can directly write:
+
+cy.contains("a", "Custom").realHover('mouse')

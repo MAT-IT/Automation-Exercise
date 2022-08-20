@@ -25,7 +25,23 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import 'cypress-file-upload'
 import HomePage from '../e2e/PageObjectRepo/HomePage'
-const homepage = new HomePage
+import signUpLoginPage from "../e2e/PageObjectRepo/SignUp_Login_page"
+
+const homepage = new HomePage()
+const login = new signUpLoginPage()
+
 Cypress.Commands.add("GoToUrl", function() {
     cy.visit("http://automationexercise.com")
   })
+ 
+  Cypress.on('uncaught:exception', (err, runnable) => { //with this we can handle uncaught:exception in cypress
+    return false;                                      //commands.js file'a alinabilir
+  });
+   
+Cypress.Commands.add("LogIn", function () {
+  homepage.SignUploginButton().click()
+  login.LoginEmailBox().type("amazontestcypress@gmail.com")
+  login.LoginPasswordBox().type("2301")
+  login.LoginButton().click()
+  login.loggedInAs().should("be.visible")
+})

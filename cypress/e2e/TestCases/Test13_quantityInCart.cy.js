@@ -12,6 +12,7 @@ const productpage =new productPage()
 describe("Test Case 13: Verify Product quantity in Cart",()=>{
     it("Navigate to url ",()=>{
         cy.GoToUrl()
+        cy.log("homepage gidildi")
     })
     it("Verify that home page is visible successfully",()=>{
         homepage.logo().should("be.visible")
@@ -23,8 +24,8 @@ describe("Test Case 13: Verify Product quantity in Cart",()=>{
     it("Verify product detail is opened",()=>{
        productpage.viewProductQuantityLabel().should("be.visible")
      })
-    it("Increase quantity to 4",()=>{
-       productpage.viewProductQuantity().clear().type("4")
+    it("Increase quantity to 4",()=>{       
+       productpage.viewProductQuantity().clear().type("4")       
     })
     it("Click 'Add to cart' button",()=>{
       productpage.addtocartbtn().click()

@@ -32,6 +32,12 @@ class HomePage {
     viewProduct(){
         return cy.get(".choose")
     }
+    AddToCartBtn(){
+        return cy.get("div[class='productinfo text-center'] a[class='btn btn-default add-to-cart']")
+    }
+    ViewCartBtn(){
+        return cy.get('u')
+    }
    
 }
 export default HomePage;
