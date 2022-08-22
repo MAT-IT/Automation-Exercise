@@ -2,12 +2,9 @@
 
 import HomePage from "../PageObjectRepo/HomePage"
 import CartPage from "../PageObjectRepo/CartPage"
-import productPage from "../PageObjectRepo/ProductPage"
 
 const homepage = new HomePage()
 const cartpage =new CartPage()
-const productpage =new productPage()
-
 
 describe("Test Case 16: Place Order: Login before Checkout",()=>{
     it("Navigate to url ",()=>{
@@ -17,7 +14,8 @@ describe("Test Case 16: Place Order: Login before Checkout",()=>{
         homepage.logo().should("be.visible")
         cy.title("includes","Automation")
     })
-    it("Click Login button, Fill email, password and click 'Login' button, Verify 'Logged",()=>{
+    it("Place Order,Login before Checkout and payment",()=>{
+        //Click Login button, Fill email, password and click 'Login' button, Verify 'Logged
         cy.LogIn()
         homepage.AddToCartBtn().eq(1).click()
         homepage.ViewCartBtn().click()
