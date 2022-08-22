@@ -23,44 +23,20 @@ describe("Test Case 16: Place Order: Login before Checkout",()=>{
         homepage.ViewCartBtn().click()
         cartpage.cartProductImage().should("be.visible")
         cartpage.proceedToCheckout().click()
+        //Verify Address Details and Review Your Order
+        cartpage.adress_forDelivery().should("be.visible")
+        cartpage.product_Quantity().should("be.visible")
+        //Enter description in comment text area and click 'Place Order'
+        cartpage.form().type("Thanks")
+        cartpage.placeOrderBtn().click()
+        //Enter payment details: Name on Card, Card Number, CVC, Expiration date
+        //Click 'Pay and Confirm Order' button
+        cy.Payment()
+        //Verify success message 'Your order has been placed successfully!'
+        cartpage.PlaceOrderedMessage().should("have.text","Congratulations! Your order has been confirmed!")
+        //Click 'Delete Account' button 
+        cartpage.DeleteAccountBtn().click()
     })    
     
-    // it("Add products to cart",()=>{
-    //     //homepage.AddToCartBtn().eq(1).click()
-    //     cy.get(':nth-child(4) > .product-image-wrapper > .single-products > .productinfo > .btn').click()
-    // })
-    
-    // it("Click 'View Cart' button",()=>{
-    //    // homepage.ViewCartBtn().click()
-    //    cy.get('u').click()
-    // })
-
-    // it("Verify that cart page is displayed",()=>{
-    //     //cartpage.cartProductImage().should("be.visible")
-    // })
-    // it(" Click 'Proceed To Checkout' button",()=>{
-    //     //cartpage.proceedToCheckout().click()
-    // })   
-    // it("Verify Address Details and Review Your Order",()=>{
-
-    // })
-    // it("Enter description in comment text area and click 'Place Order' ",()=>{
-
-    // })
-    // it("Enter payment details: Name on Card, Card Number, CVC, Expiration date",()=>{
-
-    // })
-    // it("Click 'Pay and Confirm Order' button",()=>{
-
-    // })
-    // it("Verify success message 'Your order has been placed successfully!'",()=>{
-
-    // })
-    // it("Click 'Delete Account' button ",()=>{
-
-    // })
-    // it("Verify 'ACCOUNT DELETED!' and click 'Continue' button",()=>{
-
-    // })
-    
+      
 })
