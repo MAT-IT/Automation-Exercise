@@ -18,54 +18,45 @@ describe("Test Case 14: Place Order: Register while Checkout",()=>{
         cy.title("includes","Automation")
     })
     it("Add the product to cart",()=>{
-        homepage.AddToCartBtn().eq(2).click()
+        
     })
     it(" Click 'View Cart' button",()=>{
-        homepage.ViewCartBtn().click()
+        
     })
     it("Verify that cart page is displayed",()=>{
-        cartpage.cartProductImage().should("be.visible")
+        
     })
     it("Click Proceed To Checkout",()=>{
-        cartpage.proceedToCheckout().click()
+        
     })
     it("Click 'Register / Login' button",()=>{
+        homepage.AddToCartBtn().eq(2).click()
+        homepage.ViewCartBtn().click()
+        cartpage.cartProductImage().should("be.visible")
+        cartpage.proceedToCheckout().click()
         cartpage.checkoutRegisterLogin().click()
-    })
-    it(" Fill all details in Signup and create account",()=>{
+        //Fill all details in Signup and create account"
+        cy.SignUp()
+        //"Verify ' Logged in as username' at top",()=>{
+        homepage.logged_in_as().should("contain.text","ayyyysuuu")
+        //Click 'Cart' button
+        homepage.cartBtn().click()
+        //Click 'Proceed To Checkout' button
+        cartpage.proceedToCheckout().click()
+        //Verify Address Details and Review Your Order
 
-    })
-    it("Verify 'ACCOUNT CREATED!' and click 'Continue' button",()=>{
+        //Enter description in comment text area and click 'Place Order'
 
-    })
-    it("Verify ' Logged in as username' at top",()=>{
+        //Enter payment details: Name on Card, Card Number, CVC, Expiration date
 
-    })
-    it("Click 'Cart' button",()=>{
+        //Click 'Pay and Confirm Order' button
 
-    })
-    it(" Click 'Proceed To Checkout' button",()=>{
+        //Verify success message 'Your order has been placed successfully!'
 
-    })   
-    it("Verify Address Details and Review Your Order",()=>{
+        //Click 'Delete Account' button 
 
-    })
-    it("Enter description in comment text area and click 'Place Order' ",()=>{
+        //Verify 'ACCOUNT DELETED!' and click 'Continue' button
 
-    })
-    it("Enter payment details: Name on Card, Card Number, CVC, Expiration date",()=>{
-
-    })
-    it("Click 'Pay and Confirm Order' button",()=>{
-
-    })
-    it("Verify success message 'Your order has been placed successfully!'",()=>{
-
-    })
-    it("Click 'Delete Account' button ",()=>{
-
-    })
-    it("Verify 'ACCOUNT DELETED!' and click 'Continue' button",()=>{
 
     })
     

@@ -38,6 +38,9 @@ class HomePage {
     ViewCartBtn(){
         return cy.get('u')
     }
+    logged_in_as(){
+        return cy.get(':nth-child(10) > a')
+    }
    
 }
 export default HomePage;

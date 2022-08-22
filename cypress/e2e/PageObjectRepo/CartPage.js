@@ -1,4 +1,7 @@
-class CartPage{
+import HomePage from "./HomePage"
+
+class CartPage extends HomePage{
+    
     subsHeader(){
         return cy.get('h2')
     }

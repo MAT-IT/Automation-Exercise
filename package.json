@@ -15,5 +15,8 @@
   },
   "dependencies": {
     "cypress-real-events": "^1.7.1"
-  }
+  },
+  
+    "include": ["./node_modules/cypress", "cypress/**/*.js"]
+  
 }

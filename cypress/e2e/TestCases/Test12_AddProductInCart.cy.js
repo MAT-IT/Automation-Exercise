@@ -10,6 +10,7 @@ const cartpage =new CartPage()
 describe("Test Case 12: Add Products in Cart",()=>{
     it("Navigate to url ",()=>{
         cy.GoToUrl()
+        
     })
     it("Verify that home page is visible successfully",()=>{
         homepage.logo().should("be.visible")
@@ -32,6 +33,7 @@ describe("Test Case 12: Add Products in Cart",()=>{
     })
     it("Verify both products are added to Cart",()=>{
         cartpage.cartProductImage().should("have.length","2")
+        
     })
     it("Verify their prices, quantity and total price",()=>{
         //verify separetly product price
@@ -43,7 +45,8 @@ describe("Test Case 12: Add Products in Cart",()=>{
         //this method is Converting the string to number 
         cartpage.product_Price().eq(0).then(function(price){
             cy.log(price.text())  
-            const price1 = Number(price.text().replace("Rs.",""))
+            const price1 = Number(price.text().replace("Rs. ",""))
+            cy.log(price1*2)
             cy.wrap(price1).as("price1")
             
         })

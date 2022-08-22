@@ -1,4 +1,4 @@
-Mouse event larda kullanilan plugin:
+//******Mouse event larda kullanilan plugin:*****/
 
 You can use the {cypress-real-events} plugin and this worked with your webpage.
 
@@ -11,3 +11,11 @@ Then inside your cypress/support/index.{js,ts}, write:
 And in your code you can directly write:
 
 cy.contains("a", "Custom").realHover('mouse')
+
+//*****intelisense icin asagidaki komutu package.jsonunun icine koyuyoruz*******//
+In that file, you can include the Cypress module and your test folders.
+
+{
+  "include": ["./node_modules/cypress", "cypress/**/*.js"]
+}
+The Intelligent Code Completion should now show help for cy commands inside regular JavaScript spec files.
