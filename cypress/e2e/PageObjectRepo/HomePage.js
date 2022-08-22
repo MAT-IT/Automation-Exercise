@@ -41,6 +41,12 @@ class HomePage {
     logged_in_as(){
         return cy.get(':nth-child(10) > a')
     }
+    DeleteAccountBtn(){
+        return cy.get(':nth-child(5) > a')
+    }
+    PlaceOrderedMessage(){
+        return cy.get('.col-sm-9 > p')
+    }
    
 }
 export default HomePage;

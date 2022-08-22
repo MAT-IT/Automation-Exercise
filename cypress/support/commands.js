@@ -28,11 +28,13 @@ import AccountInfo from '../e2e/PageObjectRepo/AccountInfoPage'
 import HomePage from '../e2e/PageObjectRepo/HomePage'
 import signUpLoginPage from "../e2e/PageObjectRepo/SignUp_Login_page"
 import { faker } from '@faker-js/faker';
+import Payment from '../e2e/PageObjectRepo/PaymentInfoPage';
 
 const homepage = new HomePage()
 const login = new signUpLoginPage()
 const signuploginpage = new signUpLoginPage();
 const accountinfo = new AccountInfo()
+const payment = new Payment()
 
 Cypress.Commands.add("GoToUrl", function() {
     cy.visit("http://automationexercise.com")
@@ -48,6 +50,14 @@ Cypress.Commands.add("LogIn", function () {
   login.LoginPasswordBox().type("2301")
   login.LoginButton().click()
   login.loggedInAs().should("be.visible")
+})
+Cypress.Commands.add("Payment", function () {
+  payment.CardName().type(faker.name.firstName())
+  payment.CardNumber().type(faker.finance.creditCardNumber())
+  payment.CardVerifCode().type(faker.finance.creditCardCVV())
+  payment.CardExpretionMounth().type(faker.date.month())
+  payment.CardExpretionYear().type(2026)
+  payment.PayAndConfirmBtn().click()
 })
 
 Cypress.Commands.add("SignUp",function(){

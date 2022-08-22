@@ -32,6 +32,15 @@ class CartPage extends HomePage{
     product_TotalPrice(){
         return cy.get('.cart_total p')
     }
+    adress_forDelivery(){
+        return cy.get('#address_delivery > .address_country_name')
+    }
+    form(){
+        return cy.get('.form-control')
+    }
+    placeOrderBtn(){
+        return cy.get(':nth-child(7) > .btn') 
+    }
     
     
 }
