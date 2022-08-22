@@ -27,6 +27,7 @@ import 'cypress-file-upload'
 import AccountInfo from '../e2e/PageObjectRepo/AccountInfoPage'
 import HomePage from '../e2e/PageObjectRepo/HomePage'
 import signUpLoginPage from "../e2e/PageObjectRepo/SignUp_Login_page"
+import { faker } from '@faker-js/faker';
 
 const homepage = new HomePage()
 const login = new signUpLoginPage()
@@ -48,10 +49,12 @@ Cypress.Commands.add("LogIn", function () {
   login.LoginButton().click()
   login.loggedInAs().should("be.visible")
 })
-Cypress.Commands.add("SignUp",function(){
 
-        signuploginpage.SignUpNameBox().type("ayyyysuuu")
-        signuploginpage.SignUpEmailBox().type("ccccckkkkk@gmail.com")   
+Cypress.Commands.add("SignUp",function(){
+   const email = faker.internet.email()
+
+        signuploginpage.SignUpNameBox().type("bay")
+        signuploginpage.SignUpEmailBox().type(email)   
         signuploginpage.SignUpButton().click()    
         accountinfo.enteraccountinfo().should("be.visible")   
         accountinfo.titlecheck().contains("Mr").click()

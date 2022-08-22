@@ -12,10 +12,19 @@ And in your code you can directly write:
 
 cy.contains("a", "Custom").realHover('mouse')
 
-//*****intelisense icin asagidaki komutu package.jsonunun icine koyuyoruz*******//
+//*****The Intelligent Code Completion *******//
+intelisense icin asagidaki komutu package.jsonunun icine koyuyoruz
 In that file, you can include the Cypress module and your test folders.
 
 {
   "include": ["./node_modules/cypress", "cypress/**/*.js"]
 }
 The Intelligent Code Completion should now show help for cy commands inside regular JavaScript spec files.
+
+
+/**** Install and use faker****/
+once install yapiyoruz
+$ npm install --save-dev @faker-js/faker
+
+ ardindan kullanilacak classa import yapiyoruz
+ import { faker } from '@faker-js/faker';

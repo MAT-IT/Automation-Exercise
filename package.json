@@ -10,13 +10,15 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^7.4.0",
     "cypress": "^10.4.0",
     "cypress-file-upload": "^5.0.8"
   },
   "dependencies": {
     "cypress-real-events": "^1.7.1"
   },
-  
-    "include": ["./node_modules/cypress", "cypress/**/*.js"]
-  
+  "include": [
+    "./node_modules/cypress",
+    "cypress/**/*.js"
+  ]
 }
