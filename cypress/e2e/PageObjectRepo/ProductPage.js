@@ -1,4 +1,6 @@
-class productPage {
+import HomePage from "./HomePage"
+
+class productPage extends HomePage{
     header(){
         return cy.get('.title')
     }
@@ -49,6 +51,15 @@ class productPage {
     }
     ViewCartBtn(){
         return cy.get('u')
+    }
+    categoryWomenDress(){
+        return cy.get('#Women > .panel-body > ul > :nth-child(1) > a') 
+    }
+    categoryManTshirts(){
+        return cy.get('#Men > .panel-body > ul > :nth-child(1) > a') 
+    }
+    productTitle(){
+        return cy.get('.title') 
     }
 }
 export default productPage

@@ -47,6 +47,16 @@ class HomePage {
     PlaceOrderedMessage(){
         return cy.get('.col-sm-9 > p')
     }
+   category(){
+    return cy.get('.left-sidebar > :nth-child(1)')
+   }
+   categoryWomen(){
+    return cy.get(':nth-child(1) > .panel-heading') 
+   }
+   categoryMan(){
+    return   cy.get(':nth-child(2) > .panel-heading > .panel-title') 
+   }
    
+
 }
 export default HomePage;
