@@ -41,6 +41,12 @@ class CartPage extends HomePage{
     placeOrderBtn(){
         return cy.get(':nth-child(7) > .btn') 
     }
+    DeleteProductBtn(){
+        return cy.get('.cart_quantity_delete')
+    }
+    VerifyDeletingProduct(){
+        return cy.get('b')
+    }
     
     
 }
