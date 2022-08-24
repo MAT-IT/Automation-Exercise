@@ -28,20 +28,45 @@ describe("Test Case 12: Add Products in Cart",()=>{
         productpage.ViewCartBtn().click()  
         //Verify both products are added to Cart
         cartpage.cartProductImage().should("have.length","2")
-        //verify separetly product price
-        cartpage.product_Price().eq(0).should("contain.text","Rs. 500")
-        cartpage.product_Price().eq(1).should("contain.text","Rs. 400")
-        //verify separetly product Quantity
-        cartpage.product_Quantity().eq(0).should("contain.text","1")
-        cartpage.product_Quantity().eq(1).should("contain.text","1")
-         //this method is Converting the string to number 
-         cartpage.product_Price().eq(0).then(function(price){
-            cy.log(price.text())  
-            const price1 = Number(price.text().replace("Rs. ",""))
-            cy.log(price1)
-            cy.wrap(price1).as("price1")
+        for(let i=0 ;i<2 ;i++){
+            //verify separetly product Quantity  product price
+            cartpage.product_Price().eq(i).then(function(price){
+                cy.log(price.text())  
+                const productprice = Number(price.text().replace("Rs. ",""))
+                cy.log(productprice)
+                cy.wrap(productprice).as("productprice") 
+            })
+            cartpage.product_Quantity().eq(i).then(function(Quantity){
+                cy.log(Quantity.text())  
+                const ProductQuantity = Number(Quantity.text())
+                cy.log(ProductQuantity)
+                let productquantityprice = ProductQuantity*this.productprice
+                cy.wrap(productquantityprice).as("productquantityprice") 
+                
+            })
+           
+            cartpage.product_TotalPrice().eq(i).then(function(Totalprice){
+                cy.log(Totalprice.text())  
+                const ProductTotalPrice = Number(Totalprice.text().replace("Rs. ",""))
+                cy.log(ProductTotalPrice)
+                cy.wrap(ProductTotalPrice).as("ProductTotalPrice") 
+                expect(ProductTotalPrice).to.equal(this.productquantityprice )
+            })
             
-        })
+        }
+        // 
+        // cartpage.product_Price().eq(0).should("contain.text","Rs. 500")
+        // cartpage.product_Price().eq(1).should("contain.text","Rs. 400")
+        // //verify separetly product Quantity
+        // cartpage.product_Quantity().eq(0).should("contain.text","1")
+        // cartpage.product_Quantity().eq(1).should("contain.text","1")
+        //  //this method is Converting the string to number 
+        //  cartpage.product_Price().eq(0).then(function(price){
+        //     cy.log(price.text())  
+        //     const price1 = Number(price.text().replace("Rs. ",""))
+        //     cy.log(price1)
+        //     cy.wrap(price1).as("price1")            
+        // })
 
     })
       
