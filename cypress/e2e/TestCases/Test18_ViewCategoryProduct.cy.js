@@ -1,7 +1,6 @@
 // ///<reference types="cypress" />
 
 import HomePage from "../PageObjectRepo/HomePage"
-import CartPage from "../PageObjectRepo/CartPage"
 import productPage from "../PageObjectRepo/ProductPage"
 
 const homepage = new HomePage()

@@ -7,6 +7,12 @@ class productPage extends HomePage{
     allproductCart(){
         return cy.get(".features_items .col-sm-4")
     }
+    allproductsforHover(){
+        return cy.get("div[class='productinfo text-center']")
+    }
+    addToCartAfterHover(){
+        return cy.get("div[class='product-overlay'] i[class='fa fa-shopping-cart']")
+    }
     wievfirtproduct(){
         return cy.get(':nth-child(3) > .product-image-wrapper > .choose > .nav > li > a')
     }
@@ -60,6 +66,12 @@ class productPage extends HomePage{
     }
     productTitle(){
         return cy.get('.title') 
+    }
+    brandsHeader(){
+        return cy.get('.brands_products > h2') 
+    }
+    brandsName(){
+        return cy.get("div[class='brands-name'] ul li") 
     }
 }
 export default productPage
