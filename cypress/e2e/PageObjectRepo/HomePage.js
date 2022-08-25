@@ -56,6 +56,12 @@ class HomePage {
    categoryMan(){
     return   cy.get(':nth-child(2) > .panel-heading > .panel-title') 
    }
+   recomendedItemsTitle(){
+    return cy.get('.recommended_items > .title')
+   }
+   recomendedAddToCart(){
+    return cy.get('.active > :nth-child(3) > .product-image-wrapper > .single-products > .productinfo > .btn')
+   }
    
 
 }

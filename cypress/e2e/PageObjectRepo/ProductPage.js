@@ -73,5 +73,20 @@ class productPage extends HomePage{
     brandsName(){
         return cy.get("div[class='brands-name'] ul li") 
     }
+    reviewTitle(){
+        return cy.get('.active > a')
+    }
+    reviewname(){
+        return cy.get('#name')
+    }
+    reviewEmail(){
+        return cy.get('#email')
+    }
+    reviewMessage(){
+        return cy.get('#review')
+    }
+    reviewsubmitBtn(){
+        return cy.get('#button-review')
+    }
 }
 export default productPage

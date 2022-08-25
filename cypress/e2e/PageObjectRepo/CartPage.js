@@ -47,6 +47,9 @@ class CartPage extends HomePage{
     VerifyDeletingProduct(){
         return cy.get('b')
     }
+    cartproductNameList(){
+        return cy.get ("tbody tr td[class='cart_description'] a")
+    }
     
     
 }
