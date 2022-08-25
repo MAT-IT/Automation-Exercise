@@ -1,5 +1,5 @@
 ///<reference types="cypress" />
-import productPage from "../PageObjectRepo/AllProductPage"
+import productPage from "../PageObjectRepo/ProductPage"
 import HomePage from "../PageObjectRepo/HomePage"
 import searchProductPage from "../PageObjectRepo/SearchProductPage"
 
