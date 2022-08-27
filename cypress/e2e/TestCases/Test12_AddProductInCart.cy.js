@@ -9,10 +9,8 @@ const cartpage =new CartPage()
 
 describe("Test Case 12: Add Products in Cart",()=>{
     it("Navigate to url ",()=>{
-        cy.GoToUrl()
-        
-    })
-      
+        cy.GoToUrl()        
+    })      
     it("Add two products to Cart",()=>{
         //Click on 'Products' button
         homepage.productbtn().click()
@@ -54,20 +52,7 @@ describe("Test Case 12: Add Products in Cart",()=>{
             })
             
         }
-        // 
-        // cartpage.product_Price().eq(0).should("contain.text","Rs. 500")
-        // cartpage.product_Price().eq(1).should("contain.text","Rs. 400")
-        // //verify separetly product Quantity
-        // cartpage.product_Quantity().eq(0).should("contain.text","1")
-        // cartpage.product_Quantity().eq(1).should("contain.text","1")
-        //  //this method is Converting the string to number 
-        //  cartpage.product_Price().eq(0).then(function(price){
-        //     cy.log(price.text())  
-        //     const price1 = Number(price.text().replace("Rs. ",""))
-        //     cy.log(price1)
-        //     cy.wrap(price1).as("price1")            
-        // })
-
+     
     })
       
 })
