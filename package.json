@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "spec_test": "./node_modules/.bin/cypress run --spec cypress/e2e/TestCases/test010_Subs_Homepage.cy.js",
+    "spec_test_dashboard":"./node_modules/.bin/cypress run --spec cypress/e2e/TestCases/test010_Subs_Homepage.cy.js --record --key 33e68f58-e06f-4a12-b270-813bd0e1a9cf"
   },
   "keywords": [],
   "author": "",

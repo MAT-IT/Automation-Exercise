@@ -28,7 +28,7 @@ describe("Test Case 15: Place Order: Register before Checkout",()=>{
         //Add the product to cart
         homepage.AddToCartBtn().eq(2).click()
         //Click 'Cart' button
-        homepage.cartBtn().click()
+        homepage.cartBtn().click({force: true})
         //Verify that cart page is displayed
         cartpage.cartProductImage().should("be.visible")        
         //Click Proceed To Checkout

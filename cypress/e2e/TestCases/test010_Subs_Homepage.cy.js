@@ -4,7 +4,8 @@ import HomePage from "../PageObjectRepo/HomePage"
 
 const homepage = new HomePage()
 
-describe("Test Case 10: Verify Subscription in home page",()=>{
+describe("Test Case 10: Verify Subscription in home page",
+  ()=>{
     it("Navigate to url ",()=>{
         cy.GoToUrl()
     })

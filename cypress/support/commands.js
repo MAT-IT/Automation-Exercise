@@ -89,3 +89,13 @@ Cypress.Commands.add("SignUp",function(){
          cy.get('.pull-right .btn').click({force:true})
     
 })
+Cypress.Commands.add("AdressInfo",function(){
+        accountinfo.adresscompany().type("yuyu")
+        accountinfo.adressline1().type("dfgg")
+        accountinfo.adressline2().type("hgh")
+        accountinfo.adresscity().type("fifi")        
+        accountinfo.adressstate().type("east")
+        accountinfo.adresszipcode().type("4578")
+        accountinfo.adresscountryselectbox().select(3)  
+   
+})
