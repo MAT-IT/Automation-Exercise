@@ -99,3 +99,5 @@ Cypress.Commands.add("AdressInfo",function(){
         accountinfo.adresscountryselectbox().select(3)  
    
 })
+
+require('cy-verify-downloads').addCustomCommand();

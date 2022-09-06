@@ -5,13 +5,14 @@
   "main": "index.js",
   "scripts": {
     "spec_test": "./node_modules/.bin/cypress run --spec cypress/e2e/TestCases/test010_Subs_Homepage.cy.js",
-    "spec_test_dashboard":"./node_modules/.bin/cypress run --spec cypress/e2e/TestCases/test010_Subs_Homepage.cy.js --record --key 33e68f58-e06f-4a12-b270-813bd0e1a9cf"
+    "spec_test_dashboard": "./node_modules/.bin/cypress run --spec cypress/e2e/TestCases/test010_Subs_Homepage.cy.js --record --key 33e68f58-e06f-4a12-b270-813bd0e1a9cf"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^7.4.0",
+    "cy-verify-downloads": "^0.1.8",
     "cypress": "^10.4.0",
     "cypress-file-upload": "^5.0.8"
   },
