@@ -3,7 +3,7 @@ import productPage from "../PageObjectRepo/AllProductPage"
 import HomePage from "../PageObjectRepo/HomePage"
 
 const homepage = new HomePage()
-const productpage = new productPage
+const productpage = new productPage()
 
 describe("Test Case 8: Verify All Products and product detail page",()=>{
     it("Navigate to url ",()=>{
